@@ -1,0 +1,28 @@
+[package]
+name = "ankigpt"
+version = "0.0.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+tauri = { version = "1", features = [ "dialog-all", "shell-open", "devtools" ] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+pdf-extract = "0.7.7"
+async-openai = "0.21.0"
+anki_integration = { path = "../anki_integration" }
+tokio = {version = "1.37.0", features= ["full"] }
+sync_anki_process = { path = "../sync_anki_process" }
+tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+dotenv = "0.15.0"
+
+
+[features]
+# This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
