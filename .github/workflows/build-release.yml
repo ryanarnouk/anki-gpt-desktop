@@ -15,16 +15,12 @@ jobs:
         settings:
           - platform: 'macos-latest' # for Arm based macs (M1 and above).
             args: '--target aarch64-apple-darwin'
-            includeUpdaterJson: false
           - platform: 'macos-latest' # for Intel based macs.
             args: '--target x86_64-apple-darwin'
-            includeUpdaterJson: false
           - platform: 'ubuntu-22.04' # for Tauri v1 you could replace this with ubuntu-20.04.
             args: ''
-            includeUpdaterJson: false
           - platform: 'windows-latest'
             args: ''
-            includeUpdaterJson: false
 
     runs-on: ${{ matrix.settings.platform }}
     steps:
@@ -69,3 +65,4 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ${{ matrix.settings.args }}
+          includeUpdaterJson: false
