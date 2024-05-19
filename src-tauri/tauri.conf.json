@@ -46,6 +46,9 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ]
+    }, 
+    "updater": {
+      "active": false
     }
   }
 }
