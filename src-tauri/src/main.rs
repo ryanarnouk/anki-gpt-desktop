@@ -81,7 +81,7 @@ async fn generate_question_answers(result: String, deck_name: String) {
     // leaving another level of parsing of the response necessary
     let request = CreateChatCompletionRequestArgs::default()
         .max_tokens(1024_u16)
-        .model("gpt-3.5-turbo")
+        .model("gpt-4o")
         .response_format(response_format) // specifies that the response should be a JSON object format
         .messages([
             ChatCompletionRequestSystemMessageArgs::default()
@@ -171,7 +171,7 @@ async fn score_answer(question: String, user_answer: String, ai_answer: String) 
     // leaving another level of parsing of the response necessary
     let request = CreateChatCompletionRequestArgs::default()
         .max_tokens(1024_u16)
-        .model("gpt-3.5-turbo")
+        .model("gpt-4o")
         .messages([
             ChatCompletionRequestSystemMessageArgs::default()
                 .content(role)

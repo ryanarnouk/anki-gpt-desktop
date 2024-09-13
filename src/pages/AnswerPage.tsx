@@ -23,6 +23,7 @@ function AnswerPage() {
             await listen("new_card", (event) => {
                 const parsedObject: Question = JSON.parse(event.payload as string);
                 setCard(parsedObject);
+                setText("");
                 setGrade("No grade from the model yet!");
             });
         } catch (error) {
